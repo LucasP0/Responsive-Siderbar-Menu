@@ -146,3 +146,10 @@ header .image-text .header-text {
 .sidebar li a:hover .text {
   color: var(--sidebar-color);
 }
+
+.sidebar .menu-bar{
+  height: calc(100% - 3.125rem );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
