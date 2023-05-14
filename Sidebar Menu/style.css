@@ -153,3 +153,55 @@ header .image-text .header-text {
   flex-direction: column;
   justify-content: space-between;
 }
+.menu-bar .mode {
+  background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+  height: 3.125rem;
+  width: 3.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+}
+
+.menu-bar .mode i.sun {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 3.75rem;
+  cursor: pointer;
+} 
+
+.toggle-switch .switch {
+  position: relative;
+  height: 1.375rem;
+  width: 2.75rem;
+  border-radius: 1.563rem;
+  background: var(--toggle-color);
+}
+
+.switch::before {
+  content:'';
+  position: absolute;
+  height: 0.938rem;
+  width: 0.938rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 0.313rem;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+}
+
+
+
+
+
