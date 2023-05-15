@@ -201,6 +201,10 @@ header .image-text .header-text {
   background: var(--sidebar-color);
 }
 
+body.dark .switch::before {
+  
+}
+
 
 
 
