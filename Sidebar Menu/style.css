@@ -26,8 +26,16 @@
 body {
   height: 100vh;
   background: var(--body-color);
+  transition: var(--tran-04);
 }
-
+body.dark {
+  --body-color: #18191A;
+  --sidebar-color: #242526;
+  --primary-color: #3A3B3C;
+  --primary-color-light: #3A3B3C;
+  --toggle-color: #FFF;
+  --text-color: #CCC;
+}
 
 /* =========SIDEBAR======= */
 .sidebar {
@@ -38,12 +46,26 @@ body {
   width: 15.625rem;
   padding: 0.625rem 0.875rem;
   background: var(--sidebar-color);
+  transition: var(--tran-05);
 }
+
+.sidebar.close {
+  width: 5.5rem;
+}
+
 /* ========RESUABLE CSS ======= */
 .sidebar .text {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-color)
+  color: var(--text-color);
+  transition: var(--tran-03);
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  width: 4.875rem;
+  opacity: 0;
 }
 
 .sidebar .image {
@@ -154,6 +176,8 @@ header .image-text .header-text {
   justify-content: space-between;
 }
 .menu-bar .mode {
+  position: relative;
+  border-radius: 0.375rem;
   background: var(--primary-color-light);
 }
 
@@ -173,6 +197,8 @@ header .image-text .header-text {
 }
 
 .menu-bar .mode .toggle-switch {
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,10 +225,11 @@ header .image-text .header-text {
   left: 0.313rem;
   transform: translateY(-50%);
   background: var(--sidebar-color);
+  trasition: var(--tran-03);
 }
-
+/* FAZ O BOTÃO SE MECHER */
 body.dark .switch::before {
-  
+  left: 1.5rem;
 }
 
 
