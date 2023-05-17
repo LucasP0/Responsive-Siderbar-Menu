@@ -11,4 +11,9 @@ const body = document.querySelector("body"),
 
       modeSwtich.addEventListener("click", () => {
         body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          modeText.innerHTML = "Modo Claro"
+        } else {
+          modeText.innerHTML = "Modo Escuro"
+        }
       });

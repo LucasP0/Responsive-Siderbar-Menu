@@ -17,10 +17,10 @@
   --text-color: #707070;
 
   /* ======== TRANSITION ======= */
-  --tran-02: all 0.2 ease ;
-  --tran-03: all 0.3 ease ;
-  --tran-04: all 0.4 ease ;
-  --tran-05: all 0.5 ease ;
+  --tran-02: all 0.2s ease ;
+  --tran-03: all 0.3s ease ;
+  --tran-04: all 0.4s ease ;
+  --tran-05: all 0.5s ease ;
 }
 
 body {
@@ -47,6 +47,7 @@ body.dark {
   padding: 0.625rem 0.875rem;
   background: var(--sidebar-color);
   transition: var(--tran-05);
+  z-index: 100;
 }
 
 .sidebar.close {
@@ -74,7 +75,7 @@ body.dark {
   align-items: center;
 }
 
-.sidebar li{
+.sidebar li {
   height: 3.125rem;
   margin-top: 0.625rem;
   list-style: none;
@@ -90,7 +91,7 @@ body.dark {
   font-size: 1.25rem;
 }
 .sidebar li .icon,
-.sidebar li .text{
+.sidebar li .text {
   color: var(--text-color);
   transition: var(--tran-02);
 }
@@ -125,17 +126,29 @@ header .image-text .header-text {
   position: absolute;
   top: 50%;
   right: -1.563rem;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(180deg);
   height: 1.563rem;
   width: 1.563rem;
   background: var(--primary-color);
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 1.375rem;
+  transition: var(--tran-03);
 }
+
+.sidebar.close header .toggle {
+  transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+  transform: rotate(180deg);
+  color: var(--text-color);
+}
+
+
 .sidebar .search-box{
   background: var(--primary-color-light);
   border-radius: 0.375rem;
@@ -170,6 +183,10 @@ header .image-text .header-text {
 .sidebar li a:hover .text {
   color: var(--sidebar-color);
 }
+body.dark li a:hover .icon,
+body.dark li a:hover .text {
+  color: var(--text-color);
+}
 
 .sidebar .menu-bar{
   height: calc(100% - 3.125rem );
@@ -192,9 +209,17 @@ header .image-text .header-text {
 
 .menu-bar .mode i {
   position: absolute;
+  transition: var(--tran-03);
 }
 
 .menu-bar .mode i.sun {
+  opacity: 0;
+}
+
+body.dark .menu-bar  .mode i.sun {
+  opacity: 1;
+}
+body.dark .menu-bar  .mode i.moon {
   opacity: 0;
 }
 
@@ -207,6 +232,7 @@ header .image-text .header-text {
   height: 100%;
   min-width: 3.75rem;
   cursor: pointer;
+  border-radius: 0.375rem;
   bacground: var(--primary-color-light);
 } 
 
@@ -234,6 +260,28 @@ header .image-text .header-text {
 body.dark .switch::before {
   left: 1.5rem;
 }
+
+.home {
+  position: relative;
+  height: 100vh;
+  left: 15.625rem;
+  width: calc(100% - 15.625rem);
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+
+.home .text {
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.5rem 2.5rem;
+}
+
+.sidebar.close ~ .home {
+  left: 5.5rem;
+  width: calc(100% - 5.5rem);
+}
+
 
 
 
