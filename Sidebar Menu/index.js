@@ -9,6 +9,10 @@ const body = document.querySelector("body"),
         sidebar.classList.toggle("close");
       });
 
+      searchBnt.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+
       modeSwtich.addEventListener("click", () => {
         body.classList.toggle("dark");
         if (body.classList.contains("dark")) {
